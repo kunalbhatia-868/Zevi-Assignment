@@ -1,0 +1,40 @@
+.cards-row{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.button-card{
+    border: 1px black solid;
+    padding: 2vw;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text-card {
+    border: 1px black solid;
+    padding: 2vw;
+    width: 40%;
+    text-align: center;
+}
+
+.card-button{
+   margin: 0.3rem;
+}
+
+.card-input-color{
+    width: 2.5rem;
+    height: 1.5rem;
+    margin: 0.3rem;
+    padding: 0px 0px;
+}
+.card-input-number {
+    width: 40px;
+    height:16px;
+    margin: 0.3rem;
+}
