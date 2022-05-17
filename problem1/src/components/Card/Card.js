@@ -4,8 +4,6 @@ function Card({ text, id }) {
 	const [isBold, setBold] = useState(false);
 	const [isItalic, setItalic] = useState(false);
 	const [isUnderline, setUnderline] = useState(false);
-	const [fontSize, setFontSize] = useState(20);
-	const [color, setColor] = useState("#000000");
 
 	const textId = "text_" + id;
 
@@ -35,8 +33,10 @@ function Card({ text, id }) {
 		}
 	};
 	const handleSize = (e) => {
-		setFontSize(e.target.value);
-		document.getElementById(textId).style.fontSize = fontSize;
+		document.getElementById(textId).style.fontSize = `${e.target.value}px`;
+	};
+	const handleColor = (e) => {
+		document.getElementById(textId).style.color = e.target.value;
 	};
 
 	return (
@@ -56,9 +56,15 @@ function Card({ text, id }) {
 					type="number"
 					name="number"
 					id=""
-					onKeyUp={handleSize}
+					onChange={handleSize}
 				/>
-				<input className="card-input-color" type="color" name="color" id="" />
+				<input
+					className="card-input-color"
+					type="color"
+					name="color"
+					id=""
+					onChange={handleColor}
+				/>
 			</div>
 			<div className="text-card" id={textId}>
 				{text}

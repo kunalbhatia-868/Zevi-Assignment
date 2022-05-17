@@ -4,7 +4,7 @@ import Card from "./components/Card/Card";
 function App() {
 	return (
 		<div className="App">
-			<div className="main">
+			<div className="main card-rows">
 				<Card text="He's not the sharpest knife in the drawer." id="1" />
 				<Card text="The big building was blazing with lights." id="2" />
 				<Card text="Now you must answer some big questions." id="3" />
