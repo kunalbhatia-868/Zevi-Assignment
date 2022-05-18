@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Card.css";
+
 function Card({ text, id }) {
 	const [isBold, setBold] = useState(false);
 	const [isItalic, setItalic] = useState(false);
@@ -7,7 +8,7 @@ function Card({ text, id }) {
 
 	const textId = "text_" + id;
 
-	const handleBold = (e) => {
+	const handleBold = () => {
 		setBold(!isBold);
 		if (isBold) {
 			document.getElementById(textId).style.fontWeight = "normal";
@@ -16,7 +17,7 @@ function Card({ text, id }) {
 		}
 	};
 
-	const handleItalic = (e) => {
+	const handleItalic = () => {
 		setItalic(!isItalic);
 		if (isItalic) {
 			document.getElementById(textId).style.fontStyle = "normal";
@@ -24,7 +25,8 @@ function Card({ text, id }) {
 			document.getElementById(textId).style.fontStyle = "italic";
 		}
 	};
-	const handleUnderline = (e) => {
+
+	const handleUnderline = () => {
 		setUnderline(!isUnderline);
 		if (isUnderline) {
 			document.getElementById(textId).style.textDecoration = "none";
@@ -32,9 +34,11 @@ function Card({ text, id }) {
 			document.getElementById(textId).style.textDecoration = "underline";
 		}
 	};
+
 	const handleSize = (e) => {
 		document.getElementById(textId).style.fontSize = `${e.target.value}px`;
 	};
+
 	const handleColor = (e) => {
 		document.getElementById(textId).style.color = e.target.value;
 	};
@@ -57,6 +61,8 @@ function Card({ text, id }) {
 					name="number"
 					id=""
 					onChange={handleSize}
+					max={40}
+					min={0}
 				/>
 				<input
 					className="card-input-color"
