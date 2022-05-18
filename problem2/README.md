@@ -72,6 +72,6 @@ npm start
 
 ## **Demo Images**:
 
-<img src="./problem2/demo_images/demo_img1.PNG">
-<img src="./problem2/demo_images/demo_img2.PNG">
-<img src="./problem2/demo_images/demo_img3.PNG">
+<img src="./demo_images/demo_img1.PNG">
+<img src="./demo_images/demo_img2.PNG">
+<img src="./demo_images/demo_img3.PNG">
