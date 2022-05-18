@@ -1,23 +1,24 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
-import ImageCard from "./components/ImageCard/ImageCard"
-
+import ImageCard from "./components/ImageCard/ImageCard";
 
 function App() {
-	const [imageData,setImageData]=useState([])
-	const [keyword,setKeyword]=useState('')
+	const [imageData, setImageData] = useState([]);
+	const [keyword, setKeyword] = useState("");
 
-	useEffect(()=>{
-		fetch("api/search/horses")
-		.then(response=>response.json())
-		.then(data=>{
+	useEffect(() => {
+		fetch(`api/search/${keyword}`)
+			.then((response) => response.json())
+			.then((data) => {
 				setImageData(data);
-			})
-	},[])
+			});
+	}, [keyword]);
 
-	const handleChange=(e)=>{
-		setKeyword(e.target.value);
-	}
+	const handleChange = (e) => {
+		setTimeout(() => {
+			setKeyword(e.target.value);
+		}, 700);
+	};
 	return (
 		<div className="App">
 			<div className="main-navbar">
@@ -37,9 +38,14 @@ function App() {
 				</div>
 			</div>
 			<div className="image-set">
-			{imageData.map(singleImageData=>{
-				return <ImageCard key={singleImageData.id} singleImageData={singleImageData}/>
-			})}
+				{imageData.map((singleImageData) => {
+					return (
+						<ImageCard
+							key={singleImageData.id}
+							singleImageData={singleImageData}
+						/>
+					);
+				})}
 			</div>
 		</div>
 	);
